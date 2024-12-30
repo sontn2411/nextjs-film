@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Search from './Search'
 
 const Header = () => {
   return (
@@ -8,12 +9,14 @@ const Header = () => {
           Movibazar
         </Link>
       </div>
-      <div className='w-1/4'>{/* <Search /> */}</div>
+      <div className='w-1/4'>
+        <Search />
+      </div>
       <ul className='flex gap-4 text-base font-semibold items-center'>
         {menus.map((item) => {
           return (
             <li key={item.name} className='w-auto'>
-              <Link className='' href={`/danh-sach/${item.to}?page=1`}>
+              <Link className='' href={`/danh-sach/${item.to}`}>
                 {item.name}
               </Link>
             </li>

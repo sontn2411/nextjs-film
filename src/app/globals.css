@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-1: #1d1e21;
+    --color-2: #ffd15c;
+    --color-3: #2a2b30;
+    --color-4: rgba(255, 255, 255, 0.1);
+    --color-5: #9c9ab3;
+    --color-6: #ff4c60;
+    --color-7: #57138e;
+  }
+}
+
+body {
+  background: linear-gradient(135deg, #29779d, #6e2a85);
+  color: #ffff;
+  font-family: 'Roboto Flex', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: 'slnt' 0, 'wdth' 100, 'GRAD' 0, 'XOPQ' 96, 'XTRA' 468,
+    'YOPQ' 79, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'YTLC' 514, 'YTUC' 712;
+
+  min-height: 100vh;
+}
+
+.img {
+  display: block;
+  text-decoration: none;
+  position: relative;
+  background-position: 50% 50% !important;
+  background-size: cover !important;
+  overflow: hidden;
+  padding-top: 145%;
+  border-radius: 6px;
+  -webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 0 hsla(0, 0%, 100%, 0.1);
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 0 hsla(0, 0%, 100%, 0.1);
+}
