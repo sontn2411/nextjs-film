@@ -9,8 +9,6 @@ import PaginationSlugFilm from '@/components/PaginationSlugFilm'
 import Head from 'next/head'
 
 const SlugComponent = () => {
-  console.log('==========')
-
   const router = useRouter()
   const searchParams = useSearchParams()
   const { slug } = router.query
