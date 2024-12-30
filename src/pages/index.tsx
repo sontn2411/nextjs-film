@@ -21,6 +21,7 @@ export default function Home() {
       <Head>
         <title>{seoOnPage.titleHead}</title>
       </Head>
+      <h1>Test ci/cd</h1>
       <div className='max-w-[1200px] mx-auto w-full pb-10'>
         <ListFilm data={items} />
       </div>
