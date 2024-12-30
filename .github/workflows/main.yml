@@ -11,11 +11,12 @@ jobs:
     steps:
       - name: Deplpoy to EC2
         env:
-          EC2_USER: ${{ secrets.EC2_USER }}
-          EC2_IP: ${{ secrets.EC2_IP }}
+          PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          HOSTNAME: ${{secrets.EC2_IP}}
+          USER_NAME: ${{secrets.EC2_USER}}
         run: |
-          echo $EC2_USER  ${{ secrets.EC2_IP }}
-          ssh -o StrictHostKeyChecking=no $EC2_USER@$EC2_IP << 'EOF'
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME}
             cd /project/nextjs-film
             git pull origin main
             npm install
