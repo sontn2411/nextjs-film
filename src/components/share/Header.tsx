@@ -16,7 +16,7 @@ const Header = () => {
         {menus.map((item) => {
           return (
             <li key={item.name} className='w-auto'>
-              <Link className='' href={`/danh-sach/${item.to}`}>
+              <Link className='' href={`/danh-sach/${item.to}?page=1`}>
                 {item.name}
               </Link>
             </li>

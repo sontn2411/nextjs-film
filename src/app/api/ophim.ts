@@ -15,16 +15,16 @@ export const useGetHome = () => {
   })
 }
 
-const fetchGetList = async (slug: string) => {
-  const response = await axiosInstance.get('/danh-sach/' + slug)
+const fetchGetList = async (slug: string, page: number) => {
+  const response = await axiosInstance.get(`/danh-sach/${slug}?page=${page}`)
 
   return response.data.data
 }
 
-export const useGetList = (slug: string) => {
+export const useGetList = (slug: string, page: number) => {
   return useQuery({
-    queryKey: ['getList', slug],
-    queryFn: () => fetchGetList(slug),
+    queryKey: ['getList', slug, page],
+    queryFn: () => fetchGetList(slug, page),
     staleTime: 5 * 60 * 1000,
   })
 }
